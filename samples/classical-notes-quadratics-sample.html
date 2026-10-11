@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Notes — The Quadratic Formula &amp; Discriminant</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; background: #fff; line-height: 1.5; padding: 24px 20px; max-width: 800px; margin: 0 auto; }
+  .page-head { text-align: center; border-top: 3px double #1a1a1a; border-bottom: 1px solid #1a1a1a; padding: 14px 0 10px; margin-bottom: 6px; }
+  .page-head h1 { font-size: 1.6rem; letter-spacing: 0.5px; }
+  .page-head .sub { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-top: 4px; }
+  .page-head .mode { display: inline-block; margin-top: 8px; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #999; padding: 3px 12px; border-radius: 20px; color: #555; font-family: -apple-system, sans-serif; }
+  .nameline { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 10px 2px; border-bottom: 1px solid #999; margin-bottom: 18px; color: #333; }
+  .nameline span i { display: inline-block; width: 150px; border-bottom: 1px solid #333; font-style: normal; }
+  .nameline span.s i { width: 60px; }
+  section { margin-bottom: 22px; }
+  .sec-label { font-family: -apple-system, sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #8a6d1b; margin-bottom: 8px; border-bottom: 2px solid #d9a720; display: inline-block; padding-bottom: 2px; }
+  .sec-hint { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; font-style: italic; margin-bottom: 8px; }
+  .def-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+  .def { background: #faf8f1; border-left: 3px solid #d9a720; padding: 8px 10px; font-size: 0.92rem; }
+  .def b { display: block; font-size: 0.95rem; }
+  .def .copyline { border-bottom: 1px dotted #999; height: 1.4em; margin-top: 4px; }
+  .demo { border: 1px solid #ccc; border-radius: 6px; padding: 14px; background: #fff; }
+  .demo h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .step { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed #ddd; align-items: flex-start; }
+  .step:last-child { border-bottom: none; }
+  .step-num { flex: 0 0 28px; height: 28px; border-radius: 50%; background: #1a1a1a; color: #fff; font-family: -apple-system, sans-serif; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+  .step-body { flex: 1; }
+  .step-math { font-size: 1.02rem; }
+  .step-why { margin-top: 6px; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+  .step-why .blank { display: inline-block; min-width: 200px; border-bottom: 1px solid #333; height: 1.2em; }
+  .margin-q { background: #f4f1e8; border-radius: 6px; padding: 12px 14px; margin-top: 12px; }
+  .margin-q p { font-size: 0.92rem; margin-bottom: 8px; padding-left: 22px; position: relative; }
+  .margin-q p:last-child { margin-bottom: 0; }
+  .margin-q p::before { content: "?"; position: absolute; left: 0; font-family: -apple-system, sans-serif; font-weight: 700; color: #8a6d1b; }
+  .margin-q .writeline { border-bottom: 1px dotted #999; height: 1.6em; margin: 2px 0 6px 22px; }
+  .narrate { border: 1px solid #ccc; border-radius: 6px; padding: 14px; }
+  .narrate .writelines { margin-top: 8px; }
+  .narrate .writelines div { border-bottom: 1px solid #bbb; height: 1.9em; }
+  .errlog { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .errlog th { font-family: -apple-system, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; text-align: left; padding: 8px; background: #1a1a1a; color: #fff; }
+  .errlog td { border: 1px solid #ccc; padding: 10px 8px; height: 3.2em; vertical-align: top; }
+  .errlog td:first-child { width: 50%; }
+  .qed { text-align: right; font-style: italic; color: #555; margin-top: 18px; font-size: 0.95rem; }
+  @media print { body { padding: 0; } }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>The Quadratic Formula &amp; the Discriminant</h1>
+  <div class="sub">Algebra II &middot; Quadratics</div>
+  <div><span class="mode">Classical Notes</span></div>
+</div>
+<div class="nameline">
+  <span>Name: <i></i></span>
+  <span class="s">Date: <i></i></span>
+  <span class="s">Period: <i></i></span>
+</div>
+
+<section>
+  <div class="sec-label">I. Definitions &mdash; Grammar</div>
+  <div class="sec-hint">Copy each definition precisely beneath it. In classical study, exact language comes before reasoning.</div>
+  <div class="def-grid">
+    <div class="def"><b>Quadratic equation</b>An equation that can be written in the form <i>ax</i>&sup2; + <i>bx</i> + <i>c</i> = 0, where <i>a</i> &ne; 0.<div class="copyline"></div></div>
+    <div class="def"><b>Discriminant</b>The expression <i>b</i>&sup2; &minus; 4<i>ac</i>; it predicts the number and type of solutions.<div class="copyline"></div></div>
+    <div class="def"><b>Root / Zero</b>A value of <i>x</i> that makes the equation true; where the parabola meets the <i>x</i>-axis.<div class="copyline"></div></div>
+    <div class="def"><b>Vertex</b>The highest or lowest point of the parabola; the turning point.<div class="copyline"></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">II. Demonstration &mdash; Logic</div>
+  <div class="sec-hint">The steps are given. Supply the <b>reason</b> each step is valid &mdash; this is where the mathematics lives.</div>
+  <div class="demo">
+    <h3>Solve 2<i>x</i>&sup2; + 8<i>x</i> + 6 = 0</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-math"><i>a</i> = 2, &nbsp;<i>b</i> = 8, &nbsp;<i>c</i> = 6</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-math">Discriminant: <i>b</i>&sup2; &minus; 4<i>ac</i> = 64 &minus; 48 = 16</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-math">16 &gt; 0, so there are <b>two real solutions</b>.</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-math"><i>x</i> = (&minus;8 &plusmn; &radic;16) / 4 = (&minus;8 &plusmn; 4) / 4</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-math"><i>x</i> = &minus;1 &nbsp;or&nbsp; <i>x</i> = &minus;3</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="margin-q">
+    <div class="sec-label" style="margin-bottom:10px;">Dialectic &mdash; Questions for Discussion</div>
+    <p>Why must the equation equal zero before the formula can be used?</p><div class="writeline"></div>
+    <p>What does a negative discriminant tell you about the graph &mdash; before you compute anything?</p><div class="writeline"></div>
+    <p>If <i>a</i> were negative, how would the solutions change? How would the graph change?</p><div class="writeline"></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">III. Narration &mdash; Rhetoric</div>
+  <div class="sec-hint">Explain it as if teaching a friend. If you cannot say it, you do not yet own it.</div>
+  <div class="narrate">
+    <p style="font-size:0.95rem;"><b>In your own words:</b> how does the discriminant predict the number and type of solutions of a quadratic equation?</p>
+    <div class="writelines"><div></div><div></div><div></div><div></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">IV. Error Log</div>
+  <div class="sec-hint">Record one mistake from today's work. Correction is the path to mastery.</div>
+  <table class="errlog">
+    <tr><th>My mistake</th><th>The correction</th></tr>
+    <tr><td></td><td></td></tr>
+  </table>
+</section>
+
+<div class="qed">Q.E.D.</div>
+
+</body>
+</html>

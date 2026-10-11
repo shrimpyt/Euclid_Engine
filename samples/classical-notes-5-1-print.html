@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Classical Notes — 5.1 Attributes &amp; Transformations of Quadratic Functions</title>
+<style>
+  @page { size: letter; margin: 0.75in 0.85in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #111; line-height: 1.55; font-size: 11.5pt; }
+  .head { text-align: center; margin-bottom: 4pt; }
+  .head h1 { font-size: 17pt; font-weight: bold; margin-bottom: 2pt; }
+  .head .course { font-size: 10.5pt; color: #444; }
+  .idline { display: flex; justify-content: space-between; border-bottom: 1pt solid #111; padding: 8pt 0 6pt; margin-bottom: 14pt; font-size: 10.5pt; }
+  .idline .f { display: inline-block; width: 170px; border-bottom: 1pt solid #111; }
+  .idline .s .f { width: 80px; }
+  h2.sec { font-size: 12.5pt; margin: 16pt 0 6pt; padding-bottom: 3pt; border-bottom: 1pt solid #999; }
+  h2.sec .tag { font-size: 9.5pt; font-weight: normal; font-style: italic; color: #555; }
+  p.inst { font-size: 10pt; font-style: italic; color: #444; margin-bottom: 8pt; }
+  .defs { margin: 0 0 4pt 0; }
+  .defs dt { font-weight: bold; margin-top: 7pt; }
+  .defs dd { margin: 1pt 0 0 0; }
+  .defs .copy { border-bottom: 1pt dotted #888; height: 20pt; margin-top: 2pt; }
+  .prob { margin: 8pt 0 4pt; font-weight: bold; }
+  ol.steps { margin: 4pt 0 4pt 22pt; }
+  ol.steps li { margin-bottom: 9pt; }
+  ol.steps .math { font-size: 11.5pt; }
+  ol.steps .why { font-size: 10pt; color: #333; margin-top: 3pt; }
+  ol.steps .why .bl { display: inline-block; width: 230px; border-bottom: 1pt solid #111; }
+  .discuss { margin-top: 10pt; }
+  .discuss p.q { margin: 7pt 0 2pt; }
+  .discuss .wl { border-bottom: 1pt dotted #888; height: 22pt; }
+  .narr .wl { border-bottom: 1pt solid #999; height: 24pt; }
+  table.err { width: 100%; border-collapse: collapse; margin-top: 6pt; font-size: 10.5pt; }
+  table.err th { text-align: left; border: 1pt solid #111; padding: 5pt 8pt; background: #eee; font-size: 10pt; }
+  table.err td { border: 1pt solid #111; padding: 8pt; height: 52pt; vertical-align: top; }
+  .qed { text-align: right; font-style: italic; margin-top: 14pt; color: #333; }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <h1>Attributes &amp; Transformations of Quadratic Functions</h1>
+  <div class="course">Algebra II &nbsp;&middot;&nbsp; Lesson 5.1 &nbsp;&middot;&nbsp; Classical Notes</div>
+</div>
+<div class="idline">
+  <span>Name: <span class="f"></span></span>
+  <span class="s">Date: <span class="f"></span></span>
+  <span class="s">Period: <span class="f"></span></span>
+</div>
+
+<h2 class="sec">I. Definitions <span class="tag">&mdash; copy each one exactly</span></h2>
+<dl class="defs">
+  <dt>Quadratic function</dt>
+  <dd>A function that can be written <i>f</i>(<i>x</i>) = <i>ax</i>&sup2; + <i>bx</i> + <i>c</i>, where <i>a</i> &ne; 0.</dd>
+  <dd class="copy"></dd>
+  <dt>Vertex form</dt>
+  <dd><i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> &minus; <i>h</i>)&sup2; + <i>k</i>. The vertex is visible directly: (<i>h</i>, <i>k</i>).</dd>
+  <dd class="copy"></dd>
+  <dt>Vertex</dt>
+  <dd>The highest or lowest point of the parabola.</dd>
+  <dd class="copy"></dd>
+  <dt>Axis of symmetry</dt>
+  <dd>The vertical line <i>x</i> = <i>h</i>, across which the parabola mirrors itself.</dd>
+  <dd class="copy"></dd>
+</dl>
+
+<h2 class="sec">II. Demonstration <span class="tag">&mdash; supply the reason for each step</span></h2>
+<p class="prob">Describe the transformations of <i>g</i>(<i>x</i>) = &minus;2(<i>x</i> &minus; 3)&sup2; + 1 compared to the parent function <i>y</i> = <i>x</i>&sup2;. State the vertex and the axis of symmetry.</p>
+<ol class="steps">
+  <li>
+    <div class="math">In vertex form <i>a</i>(<i>x</i> &minus; <i>h</i>)&sup2; + <i>k</i>: &nbsp;<i>a</i> = &minus;2, &nbsp;<i>h</i> = 3, &nbsp;<i>k</i> = 1.</div>
+    <div class="why">Reason: <span class="bl"></span></div>
+  </li>
+  <li>
+    <div class="math">Vertex: (3, 1). &nbsp; Axis of symmetry: <i>x</i> = 3.</div>
+    <div class="why">Reason: <span class="bl"></span></div>
+  </li>
+  <li>
+    <div class="math">|&minus;2| = 2 &gt; 1, so the parabola is stretched vertically by a factor of 2 &mdash; narrower than the parent.</div>
+    <div class="why">Reason: <span class="bl"></span></div>
+  </li>
+  <li>
+    <div class="math"><i>a</i> = &minus;2 &lt; 0, so the parabola is reflected across the <i>x</i>-axis &mdash; it opens downward.</div>
+    <div class="why">Reason: <span class="bl"></span></div>
+  </li>
+  <li>
+    <div class="math"><i>h</i> = 3 shifts the graph right 3 units; <i>k</i> = 1 shifts it up 1 unit.</div>
+    <div class="why">Reason: <span class="bl"></span></div>
+  </li>
+</ol>
+
+<div class="discuss">
+  <h2 class="sec">III. Questions for Discussion</h2>
+  <p class="q">1. Why does (<i>x</i> &minus; 3) shift the graph <i>right</i> when 3 is being subtracted?</p>
+  <div class="wl"></div>
+  <p class="q">2. How does the single value <i>a</i> control <i>both</i> the width and the direction of the parabola?</p>
+  <div class="wl"></div>
+  <p class="q">3. What would change &mdash; and what would stay the same &mdash; if <i>a</i> were &minus;&frac12; instead of &minus;2?</p>
+  <div class="wl"></div>
+</div>
+
+<h2 class="sec">IV. Narration <span class="tag">&mdash; explain it as if teaching a friend</span></h2>
+<div class="narr">
+  <p style="font-size:10.5pt;margin-bottom:4pt;">How do you read the vertex and every transformation directly from vertex form, without graphing?</p>
+  <div class="wl"></div><div class="wl"></div><div class="wl"></div><div class="wl"></div>
+</div>
+
+<h2 class="sec">V. Error Log</h2>
+<table class="err">
+  <tr><th style="width:50%">My mistake</th><th>The correction</th></tr>
+  <tr><td></td><td></td></tr>
+</table>
+
+<div class="qed">Q.E.D.</div>
+
+</body>
+</html>

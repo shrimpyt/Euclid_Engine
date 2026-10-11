@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Classical Notes — Attributes &amp; Transformations of Quadratic Functions</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; background: #fff; line-height: 1.5; padding: 24px 20px; max-width: 800px; margin: 0 auto; }
+  .page-head { text-align: center; border-top: 3px double #1a1a1a; border-bottom: 1px solid #1a1a1a; padding: 14px 0 10px; margin-bottom: 6px; }
+  .page-head h1 { font-size: 1.5rem; letter-spacing: 0.5px; }
+  .page-head .sub { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 3px; color: #555; margin-top: 4px; }
+  .page-head .mode { display: inline-block; margin-top: 8px; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid #999; padding: 3px 12px; border-radius: 20px; color: #555; font-family: -apple-system, sans-serif; }
+  .nameline { display: flex; justify-content: space-between; font-size: 0.9rem; padding: 10px 2px; border-bottom: 1px solid #999; margin-bottom: 18px; color: #333; }
+  .nameline span i { display: inline-block; width: 150px; border-bottom: 1px solid #333; font-style: normal; }
+  .nameline span.s i { width: 60px; }
+  section { margin-bottom: 22px; }
+  .sec-label { font-family: -apple-system, sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: #8a6d1b; margin-bottom: 8px; border-bottom: 2px solid #d9a720; display: inline-block; padding-bottom: 2px; }
+  .sec-hint { font-family: -apple-system, sans-serif; font-size: 0.78rem; color: #777; font-style: italic; margin-bottom: 8px; }
+  .def-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 18px; }
+  .def { background: #faf8f1; border-left: 3px solid #d9a720; padding: 8px 10px; font-size: 0.92rem; }
+  .def b { display: block; font-size: 0.95rem; }
+  .def .copyline { border-bottom: 1px dotted #999; height: 1.4em; margin-top: 4px; }
+  .demo { border: 1px solid #ccc; border-radius: 6px; padding: 14px; background: #fff; }
+  .demo h3 { font-size: 1.05rem; margin-bottom: 10px; }
+  .step { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed #ddd; align-items: flex-start; }
+  .step:last-child { border-bottom: none; }
+  .step-num { flex: 0 0 28px; height: 28px; border-radius: 50%; background: #1a1a1a; color: #fff; font-family: -apple-system, sans-serif; font-size: 0.8rem; display: flex; align-items: center; justify-content: center; }
+  .step-body { flex: 1; }
+  .step-math { font-size: 1.02rem; }
+  .step-why { margin-top: 6px; font-family: -apple-system, sans-serif; font-size: 0.82rem; color: #555; }
+  .step-why .blank { display: inline-block; min-width: 200px; border-bottom: 1px solid #333; height: 1.2em; }
+  .margin-q { background: #f4f1e8; border-radius: 6px; padding: 12px 14px; margin-top: 12px; }
+  .margin-q p { font-size: 0.92rem; margin-bottom: 8px; padding-left: 22px; position: relative; }
+  .margin-q p::before { content: "?"; position: absolute; left: 0; font-family: -apple-system, sans-serif; font-weight: 700; color: #8a6d1b; }
+  .margin-q .writeline { border-bottom: 1px dotted #999; height: 1.6em; margin: 2px 0 6px 22px; }
+  .narrate { border: 1px solid #ccc; border-radius: 6px; padding: 14px; }
+  .narrate .writelines div { border-bottom: 1px solid #bbb; height: 1.9em; }
+  .errlog { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .errlog th { font-family: -apple-system, sans-serif; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1.5px; text-align: left; padding: 8px; background: #1a1a1a; color: #fff; }
+  .errlog td { border: 1px solid #ccc; padding: 10px 8px; height: 3.2em; vertical-align: top; }
+  .errlog td:first-child { width: 50%; }
+  .qed { text-align: right; font-style: italic; color: #555; margin-top: 18px; font-size: 0.95rem; }
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <h1>Attributes &amp; Transformations of Quadratic Functions</h1>
+  <div class="sub">Algebra II &middot; Topic 5 &mdash; Lesson 5.1</div>
+  <div><span class="mode">Classical Notes</span></div>
+</div>
+<div class="nameline">
+  <span>Name: <i></i></span>
+  <span class="s">Date: <i></i></span>
+  <span class="s">Period: <i></i></span>
+</div>
+
+<section>
+  <div class="sec-label">I. Definitions &mdash; Grammar</div>
+  <div class="sec-hint">Copy each definition precisely beneath it. Exact language comes before reasoning.</div>
+  <div class="def-grid">
+    <div class="def"><b>Quadratic function</b>A function that can be written <i>f</i>(<i>x</i>) = <i>ax</i>&sup2; + <i>bx</i> + <i>c</i>, where <i>a</i> &ne; 0.<div class="copyline"></div></div>
+    <div class="def"><b>Vertex form</b><i>f</i>(<i>x</i>) = <i>a</i>(<i>x</i> &minus; <i>h</i>)&sup2; + <i>k</i>; reveals the vertex directly.<div class="copyline"></div></div>
+    <div class="def"><b>Vertex</b>The point (<i>h</i>, <i>k</i>); the highest or lowest point of the parabola.<div class="copyline"></div></div>
+    <div class="def"><b>Axis of symmetry</b>The vertical line <i>x</i> = <i>h</i>; the parabola mirrors across it.<div class="copyline"></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">II. Demonstration &mdash; Logic</div>
+  <div class="sec-hint">The steps are given. Supply the <b>reason</b> each step is valid.</div>
+  <div class="demo">
+    <h3>Describe the transformations of <i>g</i>(<i>x</i>) = &minus;2(<i>x</i> &minus; 3)&sup2; + 1 compared to the parent <i>y</i> = <i>x</i>&sup2;. State the vertex and axis of symmetry.</h3>
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-math">In vertex form <i>a</i>(<i>x</i> &minus; <i>h</i>)&sup2; + <i>k</i>: &nbsp;<i>a</i> = &minus;2, &nbsp;<i>h</i> = 3, &nbsp;<i>k</i> = 1</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-math">Vertex: (3, 1) &nbsp;&middot;&nbsp; Axis of symmetry: <i>x</i> = 3</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-math">|&minus;2| = 2 &gt; 1, so the parabola is <b>vertically stretched</b> by a factor of 2 &mdash; narrower than the parent.</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-math"><i>a</i> = &minus;2 &lt; 0, so the parabola is <b>reflected over the <i>x</i>-axis</b> &mdash; it opens downward.</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-math"><i>h</i> = 3 shifts the graph <b>right 3</b>; &nbsp;<i>k</i> = 1 shifts it <b>up 1</b>.</div>
+        <div class="step-why">Why valid? <span class="blank"></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="margin-q">
+    <div class="sec-label" style="margin-bottom:10px;">Dialectic &mdash; Questions for Discussion</div>
+    <p>Why does (<i>x</i> &minus; 3) shift the graph <b>right</b> when 3 is being <i>subtracted</i>?</p><div class="writeline"></div>
+    <p>How does the single value <i>a</i> control <b>both</b> the width and the direction of the parabola?</p><div class="writeline"></div>
+    <p>What would change &mdash; and what would stay the same &mdash; if <i>a</i> were &minus;&frac12; instead of &minus;2?</p><div class="writeline"></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">III. Narration &mdash; Rhetoric</div>
+  <div class="sec-hint">Explain it as if teaching a friend. If you cannot say it, you do not yet own it.</div>
+  <div class="narrate">
+    <p style="font-size:0.95rem;"><b>In your own words:</b> how do you read the vertex and every transformation directly from vertex form, without graphing?</p>
+    <div class="writelines"><div></div><div></div><div></div><div></div></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-label">IV. Error Log</div>
+  <div class="sec-hint">Record one mistake from today's work. Correction is the path to mastery.</div>
+  <table class="errlog">
+    <tr><th>My mistake</th><th>The correction</th></tr>
+    <tr><td></td><td></td></tr>
+  </table>
+</section>
+
+<div class="qed">Q.E.D.</div>
+
+</body>
+</html>
